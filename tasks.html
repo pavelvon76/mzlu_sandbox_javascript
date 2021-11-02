@@ -3,12 +3,12 @@
     <meta charset="UTF-8">
     <link rel=stylesheet href="zmeny.css" text=text/html>
     <title>Změny vlastností tabulky</title>
-    <script>
+    <script type = "text/javascript">
         function loadDoc() {
             var xhttp = new XMLHttpRequest();
             // xhttp.open("GET", "results.xml", false);
-            xhttp.open("GET", "../webroot/files/p1/results.xml", false);
-            xhttp.send();
+            xhttp.open("GET", "tasks.xml", false);
+            //xhttp.send();
             myFunction(xhttp);//(this);
         }
         function myFunction(xml)
@@ -16,18 +16,32 @@
             var xmlDoc = xml.responseXML;
             var parser = new DOMParser();
             var xmlDoc = parser.parseFromString(xml.responseText, "application/xml");
-            var x;    
+            //var x;    
             var txt = "";
-            var y;
-            y = xmlDoc.getElementsByTagName("entryresult");//.childNodes[0];
-            x = y[1].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-            alert(x);
+            //var y;
+            txt = xmlDoc.getElementsByTagName("task")[0].childNodes[0].nodeValue;;//.childNodes[0];
+            // x = y[1].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            alert(txt);
+        }     
+        function gettasks() {
+            var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("get", "Employees", true);
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        showResult(this);
+                    }
+                };
+	        xmlhttp.send(null);
         }
     </script>
 </head>
 <body>
     <h1>Tasks</h1>
     <p class="mainPage">Stránka má zobrazovat xml soubor a jeho obsah</p>
+        <input type="button" onclick="loadDoc()" value="Display">
+
+
+
 
         <table border="7" align="center">
             <th colspan="2" onmousedown="document.getElementById('mySelectedImg').setAttribute('src','motyli.gif')">Naši motýli</th>

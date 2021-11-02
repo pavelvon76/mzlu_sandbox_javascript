@@ -1,50 +1,51 @@
 <xml version="1.0" encoding="UTF-8"?>
-<task>
-    <task_no>0001</task_no>
-    <task_category>slovni</task_category>
-    <task_level>3<task_level>
-    <task_header>Jak je to daleko ke komínu.</task_header>
-    <task_desc>Kluk stojí před komínem, který je vysoký 25m, je od něho vzálený 30m. Chlapec si představuje, jak by bylo možné se projít po provaze až na vrcholek komína. Zajímá ho, jako vzdálenost by musel po laně ujít. Pomůžeš mu?</task_desc>
-    <task_hints>
-        <hint type="image">0001_01.jpg</hint>
-        <hint type="image">0001_02.jpg</hint>
-        <hint type="text">Když máte označené vrcholy, můžete přistoupit k označení stran trojúlhelníka. 
-                      <br>Jednoduše si pak můžete dosadit do rovnice a2 = b2 + c2
-                      <br>Převodem na druhou stranu dostanete c = odm(a2 + b2)
-                      </hint>
-        <hint type="text">Řešením je ....</hint>
-    </task_hints>
-</task>
-<task>
-    <task_no>0002</task_no>
-    <task_category>slovni</task_category>
-    <task_level>2<task_level>
-    <task_header>Obří jablko</task_header>
-    <task_desc>Jednou se mi zdálo, že jsem rozkrojil obrovské kulaté jablko. V poloměru mělo 135cm. Když jsem se díval na náš stůl, který měl 60cm na šířku a 100cm na délku, říkal jsem ji jestli je to stejná plocha. Rozhodněte, která plocha je větší.</task_desc>
-    <task_hints>
-        <hint type="image">0002_01.jpg</hint>
-        <hint type="image">0002_02.jpg</hint>
-        <hint type="text">Z rozboru je vidět, že máme vše podstatné pro výpočet plochy jablka - kruhu a stolu - obdélníku.
-                      <br>Pj = pi * r*r
-                      <br>Ps = a * b
-                      </hint>
-        <hint type="text">Řešením je ....</hint>
-    </task_hints>
-</task>
-<task>
-    <task_no>0003</task_no>
-    <task_category>slovni</task_category>
-    <task_level>3<task_level>
-    <task_header>Kolik je ve třídě C žáků?</task_header>
-    <task_desc>Sloučím-li první třídu se třetí, je rozdíl oproti druhé třídě 16. ...</task_desc>
-    <task_hints>
-        <hint type="image">0003_01.jpg</hint>
-        <hint type="text">Třídy jsme si rozdělili do 3: A, B, C
-                      <br>Platí, že A + C - B = 16
-                      <br>Platí, že B + C - A = 20
-                      </hint>
-        <hint type="text">Řešením je ....</hint>
-    </task_hints>
-</task>
-
+<tasks>
+    <task>
+        <task_no>0001</task_no>
+        <task_category>slovni</task_category>
+        <task_level>3<task_level>
+        <task_header>Jak je to daleko ke komínu.</task_header>
+        <task_desc>Kluk stojí před komínem, který je vysoký 25m, je od něho vzálený 30m. Chlapec si představuje, jak by bylo možné se projít po provaze až na vrcholek komína. Zajímá ho, jako vzdálenost by musel po laně ujít. Pomůžeš mu?</task_desc>
+        <task_hints>
+            <hint type="image">0001_01.jpg</hint>
+            <hint type="image">0001_02.jpg</hint>
+            <hint type="text">Když máte označené vrcholy, můžete přistoupit k označení stran trojúlhelníka. 
+                        <br>Jednoduše si pak můžete dosadit do rovnice a2 = b2 + c2
+                        <br>Převodem na druhou stranu dostanete c = odm(a2 + b2)
+                        </hint>
+            <hint type="text">Řešením je ....</hint>
+        </task_hints>
+    </task>
+    <task>
+        <task_no>0002</task_no>
+        <task_category>slovni</task_category>
+        <task_level>2<task_level>
+        <task_header>Obří jablko</task_header>
+        <task_desc>Jednou se mi zdálo, že jsem rozkrojil obrovské kulaté jablko. V poloměru mělo 135cm. Když jsem se díval na náš stůl, který měl 60cm na šířku a 100cm na délku, říkal jsem ji jestli je to stejná plocha. Rozhodněte, která plocha je větší.</task_desc>
+        <task_hints>
+            <hint type="image">0002_01.jpg</hint>
+            <hint type="image">0002_02.jpg</hint>
+            <hint type="text">Z rozboru je vidět, že máme vše podstatné pro výpočet plochy jablka - kruhu a stolu - obdélníku.
+                        <br>Pj = pi * r*r
+                        <br>Ps = a * b
+                        </hint>
+            <hint type="text">Řešením je ....</hint>
+        </task_hints>
+    </task>
+    <task>
+        <task_no>0003</task_no>
+        <task_category>slovni</task_category>
+        <task_level>3<task_level>
+        <task_header>Kolik je ve třídě C žáků?</task_header>
+        <task_desc>Sloučím-li první třídu se třetí, je rozdíl oproti druhé třídě 16. ...</task_desc>
+        <task_hints>
+            <hint type="image">0003_01.jpg</hint>
+            <hint type="text">Třídy jsme si rozdělili do 3: A, B, C
+                        <br>Platí, že A + C - B = 16
+                        <br>Platí, že B + C - A = 20
+                        </hint>
+            <hint type="text">Řešením je ....</hint>
+        </task_hints>
+    </task>
+</tasks>
 </xml>
