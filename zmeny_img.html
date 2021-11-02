@@ -1,0 +1,31 @@
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <link rel=stylesheet href="zmeny.css" text=text/html>
+    <title>Změny vlastností tabulky</title>
+</head>
+<body>
+    <h1>Stránka se změnami vlastností objetků</h1>
+    <p class="mainPage"><a href="https://akela.mendelu.cz/~rybicka/cviceni/js/cvic3/priklad22.htm" target="_blank">zadání</a></p>
+    <p class="mainPage">Najeď na motýla, kterého chceš vidět.</p>
+
+        <table border="7" align="center">
+            <th colspan="2" onmousedown="document.getElementById('mySelectedImg').setAttribute('src','motyli.gif')">Naši motýli</th>
+            <tr>
+                <td onmousedown="document.getElementById('mySelectedImg').setAttribute('src','otakarek.gif')"
+                    onmouseover="this.style.backgroundColor='yellow'"
+                    onmouseleave="this.style.backgroundColor=''">Otakárek</td>
+                <td rowspan="4"><img id="mySelectedImg" src='motyli.gif'></td>       
+            </tr>
+            <tr><td onmousedown="document.getElementById('mySelectedImg').setAttribute('src','zlutasek.gif')"
+                    onmouseover="this.style.backgroundColor='yellow'"
+                    onmouseleave="this.style.backgroundColor=''">Žluťásek</td></tr>
+            <tr><td onmousedown="document.getElementById('mySelectedImg').setAttribute('src','babocka.gif')"
+                    onmouseover="this.style.backgroundColor='yellow'"
+                    onmouseleave="this.style.backgroundColor=''">Babočka</td></tr>    
+        </table>
+
+
+</body>
+
+</html>

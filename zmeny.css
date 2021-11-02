@@ -1,0 +1,28 @@
+/* CSS Document */
+
+body {font-family:'Times New Roman', Times, serif;
+      background-color:palegreen;}
+h1, h2 {color:""; text-align: center}
+table {background-color:rgb(214, 255, 214);
+       border-color: seagreen;
+       border-style: ridge;
+       height: 450px;
+       width: 550px;}
+td {text-align: center;
+    font-weight: bold;
+    }
+img {width: 250px;}
+th {height: 50px;}
+
+/* definice trid */
+.mainPage {text-align: center;}
+.pridejMotylaDiv {text-align: center;}
+.pridejMotylaBtn {font-weight: bold;
+                height: 200px;
+                width: 200px;}
+.pridejMotylaBtnImg {width: 150px;
+                    height: 120p;
+                    }
+
+.mujAdmiral {width: 50px;
+            height: 50px;}
