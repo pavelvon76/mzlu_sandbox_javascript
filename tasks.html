@@ -4,60 +4,34 @@
     <link rel=stylesheet href="zmeny.css" text=text/html>
     <title>Změny vlastností tabulky</title>
     <script type = "text/javascript">
-        function loadDoc() {
-            var xhttp = new XMLHttpRequest();
-            // xhttp.open("GET", "results.xml", false);
-            xhttp.open("GET", "tasks.xml", false);
-            //xhttp.send();
-            myFunction(xhttp);//(this);
-        }
-        function myFunction(xml)
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 0) {
+                        getTasks(this);
+                    }
+                };
+            xmlhttp.open("GET", "books.xml", true);
+            xmlhttp.send(this);
+
+        function getTasks(xml)
         {
             var xmlDoc = xml.responseXML;
             var parser = new DOMParser();
             var xmlDoc = parser.parseFromString(xml.responseText, "application/xml");
+            
             //var x;    
             var txt = "";
             //var y;
-            txt = xmlDoc.getElementsByTagName("task")[0].childNodes[0].nodeValue;;//.childNodes[0];
+            var tasks = xmlDoc.getElementsByTagName("book");//.childNodes[0];
             // x = y[1].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-            alert(txt);
+            alert(tasks[0].childNodes[0].nodeValue);
         }     
-        function gettasks() {
-            var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("get", "Employees", true);
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        showResult(this);
-                    }
-                };
-	        xmlhttp.send(null);
-        }
     </script>
 </head>
 <body>
     <h1>Tasks</h1>
     <p class="mainPage">Stránka má zobrazovat xml soubor a jeho obsah</p>
-        <input type="button" onclick="loadDoc()" value="Display">
-
-
-
-
-        <table border="7" align="center">
-            <th colspan="2" onmousedown="document.getElementById('mySelectedImg').setAttribute('src','motyli.gif')">Naši motýli</th>
-            <tr>
-                <td onmousedown="document.getElementById('mySelectedImg').setAttribute('src','otakarek.gif')"
-                    onmouseover="this.style.backgroundColor='yellow'"
-                    onmouseleave="this.style.backgroundColor=''">Otakárek</td>
-                <td rowspan="4"><img id="mySelectedImg" src='motyli.gif'></td>       
-            </tr>
-            <tr><td onmousedown="document.getElementById('mySelectedImg').setAttribute('src','zlutasek.gif')"
-                    onmouseover="this.style.backgroundColor='yellow'"
-                    onmouseleave="this.style.backgroundColor=''">Žluťásek</td></tr>
-            <tr><td onmousedown="document.getElementById('mySelectedImg').setAttribute('src','babocka.gif')"
-                    onmouseover="this.style.backgroundColor='yellow'"
-                    onmouseleave="this.style.backgroundColor=''">Babočka</td></tr>    
-        </table>
+        <input type="button" onclick="loadTasksXml()" value="Display">
 
 
 </body>
