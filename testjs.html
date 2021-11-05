@@ -6,22 +6,36 @@
 
 <script>
 var xhttp = new XMLHttpRequest();
-xhttp.open("GET", "books.xml", true);
+// file:///C:/PWON/CODE%20repository/mzlu_sandbox_javascript/books.xml
+xhttp.open("GET", "tasks.xml", true);
+xhttp.setRequestHeader("Content-Type","text/xml");
 //xhttp.open("GET", "books.xml" + new Date().getTime());
 
 xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myFunction(this);
+    if (this.readyState == 4) {
+        //this.status == 0
+        xhttp.onreadystatechange = null;
+        if (this.status == 200) {
+            myFunction(this);
+        }
+        
     }
 };
-
 xhttp.send();
 
 function myFunction(xml) {
+    
+    console.log(xml);
     var xmlDoc = xml.responseXML;
-    var x = xmlDoc.getElementsByTagName('title')[0];
-    var y = x.childNodes[0];
-    document.getElementById("demo").innerHTML =
+    var tasks = xmlDoc.getElementsByTagName('task');
+
+    for(var i=0, i < tasks.childNodes.length,i++){
+    //Create a new row for tbody
+    var tr = document.createElement('tr');
+    document.getElementById('tbody').appendChild(tr);
+}
+    // var y = x.childNodes[0];
+    //document.getElementById("demo").innerHTML =
     y.nodeValue; 
 }
 </script>
