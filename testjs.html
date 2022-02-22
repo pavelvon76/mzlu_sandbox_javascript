@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html>
+<html lang="cs-CZ">
+    <head> 
+        <title>hey dude</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
 <body>
 
 <p id="demo"></p>
@@ -7,7 +11,7 @@
 <script>
 var xhttp = new XMLHttpRequest();
 // file:///C:/PWON/CODE%20repository/mzlu_sandbox_javascript/books.xml
-xhttp.open("GET", "tasks.xml", true);
+xhttp.open("GET", "books.xml", true);
 xhttp.setRequestHeader("Content-Type","text/xml");
 //xhttp.open("GET", "books.xml" + new Date().getTime());
 
@@ -27,16 +31,15 @@ function myFunction(xml) {
     
     console.log(xml);
     var xmlDoc = xml.responseXML;
-    var tasks = xmlDoc.getElementsByTagName('task');
+    var x = xmlDoc.getElementsByTagName('title')[1];
 
-    for(var i=0, i < tasks.childNodes.length,i++){
+    //for(var i=0, i < tasks.childNodes.length,i++){
     //Create a new row for tbody
-    var tr = document.createElement('tr');
-    document.getElementById('tbody').appendChild(tr);
-}
-    // var y = x.childNodes[0];
-    //document.getElementById("demo").innerHTML =
-    y.nodeValue; 
+    //var tr = document.createElement('tr');
+    //document.getElementById('tbody').appendChild(tr);
+
+    var y = x.childNodes[0];
+    document.getElementById("demo").innerHTML = y.nodeValue; 
 }
 </script>
 
