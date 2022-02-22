@@ -1,0 +1,95 @@
+main, header, section, aside, footer {
+    margin: 0px;
+    padding: 5px;
+    border: 1px solid #000000;
+    color: white;
+}
+
+.task {
+    display: flex;
+    flex-direction:column;
+    margin: 0;
+    padding: 1px;
+    border: 1px solid red;
+    color: #000000;
+}
+
+.task_header
+{
+    display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #03a9f4;  
+    flex-direction: row;
+}
+
+.task_header_desc
+{
+    flex: 2;
+    background: green;
+    border-top-left-radius: 10px;
+}
+
+.task_level
+{
+    flex: 1;
+    background: violet;
+    border-top-right-radius: 10px;    
+}
+
+.task_description
+{
+    flex: 1;
+    background: #d22b1f;
+}
+
+.task_help
+{
+    flex: 1;
+    background: orange;
+}
+
+.task_answer
+{
+    flex: 1;
+    background: gray;
+}
+
+.task_solution
+{
+    flex: 1;
+    background: green;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.task_check_btn
+{
+    background: lightgrey;
+    border-radius: 10px;
+}
+main {
+    background: #000000;
+}
+
+.header {
+    background: #03a9f4;
+}
+
+.hero {
+    background: #d22b1f;
+}
+
+.content {
+    background: #129a22;
+}
+
+.themes {
+    border: 1px solid #000000;
+    background: #673ab7;
+}
+
+.footer {
+    border: 1px solid #000000;
+    background: #616161;
+}
