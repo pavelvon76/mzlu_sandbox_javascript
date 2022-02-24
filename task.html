@@ -4,6 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel=stylesheet href="math.css">
+        <script>
+            let count = 0;
+            let results = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        
+            function useHelp(task_id,task_help_points) {
+                //alert(task_id + " used " + task_help_points);
+                results[task_id] += Number(task_help_points); 
+            }
+            function initResult(task_id,task_points) {
+                results[task_id] += Number(task_points);
+                alert(results[task_id]);
+            }
+        </script>
     </head>
     <body>
         <div class="task">
@@ -17,18 +30,10 @@
                 </div>
             </section>
             <section class="task_help">
-                <div onclick="document.getElementById('task_help_1').style='display:block'">task_help_1:</div>
-                <div>
-                    <ul id='task_help_1' style="display:none;">
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Nihil opus est exemplis hoc</li> 
-                        <li>facere longius.</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="task_help">
-                <div onclick="document.getElementById('task_help_2').style='display:block'">task_help_2:</div>
-                <div id="task_help_2" style="display:none;">
+                <div help_points="-3" task_id="1" onclick="this.nextElementSibling.style='display:block';
+                              useHelp(this.getAttribute('task_id'),this.getAttribute('help_points'));
+                              this.style='display:none';">task_help_1:</div>
+                <div class="task_help_line">
                     <ul>
                         <li>Lorem ipsum dolor sit amet</li>
                         <li>Nihil opus est exemplis hoc</li> 
@@ -37,8 +42,8 @@
                 </div>
             </section>
             <section class="task_help">
-                <div onclick="document.getElementById('task_help_3').style='display:block'">task_help_3:</div>
-                <div id="task_help_3" style="display:none;">
+                <div onclick="this.nextElementSibling.style='display:block'">task_help_2:</div>
+                <div class="task_help_line">
                     <ul>
                         <li>Lorem ipsum dolor sit amet</li>
                         <li>Nihil opus est exemplis hoc</li> 
@@ -46,13 +51,21 @@
                     </ul>
                 </div>
             </section>
-            <section class="task_answer">
+            <section class="task_help">
+                <div onclick="this.nextElementSibling.style='display:block'">task_help_3:</div>
+                <div class="task_help_line">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Nihil opus est exemplis hoc</li> 
+                        <li>facere longius.</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="task_answer" task_id="1"  task_points="10" task_answer1="17">
                 task_answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est <input type=text id="task_answer" title="Zadejte výsledek"/> hoc facere longius.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.
-                <button class="task_check_btn" onclick="var my_task_answer = document.getElementById('task_answer').value;
-                                                           document.getElementById('task_solution').style='display:block'">Zkontroluj</button>
-            </section>
-            <section class="task_solution" id="task_solution" style="display:none;">
-                <div>
+                <button class="task_check_btn" onclick="this.nextElementSibling.style='display:block';
+                                                        initResult(this.parentNode.getAttribute('task_id'),this.parentNode.getAttribute('task_points'));">Zkontroluj</button>
+                <div class="task_solution" style="display: none;">
                     task_solution
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.
                 </div>
