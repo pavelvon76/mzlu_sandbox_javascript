@@ -34,10 +34,16 @@ function rozpadni(xmlText) {
     txt += x[i].getElementsByTagName("task_level")[0].innerHTML + "<br>";
     txt += x[i].getElementsByTagName("task_header")[0].innerHTML + "<br>";
 
+    // process help
     helps = x[i].getElementsByTagName("task_hints")[0].getElementsByTagName("hint");
     var j;
     for (j = 0; j< helps.length; j++) {
-        txt += "<b>help:</b>" + helps[j].innerHTML + "<br>";
+        if (helps[j].getAttribute("type") == "image") {
+            txt += "<b>help:</b>" + "<img src=''"+ helps[j].innerHTML + "'' alt='obrazek'>"  + "<br>";
+        } else {
+            txt += "<b>help:</b>" + helps[j].getAttribute("type")+ helps[j].innerHTML + "<br>";
+        }
+        
     }
   }
   document.getElementById("demo").innerHTML = txt;
