@@ -74,10 +74,11 @@ main, header, section, aside, footer {
     border-radius: 10px;
 }
 main {
-    background: #000000;
+    background: #6bf0ad;
+    padding: 15px;
 }
 
-.header {
+header {
     background: #03a9f4;
 }
 
@@ -89,12 +90,15 @@ main {
     background: #129a22;
 }
 
-.themes {
+themes {
     border: 1px solid #000000;
     background: #673ab7;
 }
-
-.footer {
+aside {
+    border: 1px solid #000000;
+    background: #8db73a;
+}
+footer {
     border: 1px solid #000000;
     background: #616161;
 }

@@ -1,0 +1,77 @@
+<html lang="cs-CZ">
+    <head>
+        <script language="JavaScript">
+
+
+       var xhttp = new XMLHttpRequest();
+       xhttp.open("GET", "books.xml", true);
+       xhttp.setRequestHeader("Content-Type","text/xml");
+       xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                //this.status == 0
+                xhttp.onreadystatechange = null;
+                if (this.status == 200) {
+                    myFunction(this);
+                }
+                
+            }
+        };
+        xhttp.send();
+
+        function myFunction(xml) {
+            console.log(xml);
+            var xmlDoc = xml.responseXML;
+            var x = xmlDoc.getElementsByTagName('title')[1];
+
+            //for(var i=0, i < tasks.childNodes.length,i++){
+            //Create a new row for tbody
+            //var tr = document.createElement('tr');
+            //document.getElementById('tbody').appendChild(tr);
+
+            var y = x.childNodes[0];
+            document.getElementById("demo").innerHTML = y.nodeValue; 
+            //document.getElementById("demo").innerHTML = x.nodes; 
+            
+        }
+
+        //var xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+        var xmlDOMDoc=new ActiveXObject("Microsoft.XMLDOM");
+        function loadXML(xmlFile) {
+                alert(xmlFile);
+                xmlDOMDoc.async="false";
+                xmlDOMDoc.onreadystatechange=verify;
+                xmlDOMDoc.load(xmlFile);
+        }
+        
+       function verify() { 
+               if(xmlDOMDoc.readyState!=4)
+                       return false; 
+       }
+       
+       function traverse(tree) {
+               if(tree.hasChildNodes()) {
+                       document.write('<ul><li>');
+                       document.write('<b>'+tree.tagName+' : </b>');
+                       var nodes=tree.childNodes.length;
+                       for(var i=0; i<TREE.CHILDNODES.LENGTH; 
+                         traverse(tree.childNodes(i)));
+                       document.write('</li></ul>');
+               }
+               else
+                       document.write(tree.text);
+       }
+       
+       function initTraverse(file) {
+               loadXML(file);
+               var doc=xmlDOMDoc.documentElement;
+               traverse(doc);
+       }
+
+       </script>
+    </head>
+    <body>
+        <button onclick="alert('meee')">show me</button>
+        <button onclick="loadXML('tasks.xml')">load xml</button>
+        <div id="demo">here comes demo: </div>
+
+    </body>

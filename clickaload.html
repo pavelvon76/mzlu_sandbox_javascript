@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Using the XMLHttpRequest Object</h2>
+
+<div id="demo">
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+</div>
+
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      rozpadni(this.responseText);
+    }
+  };
+  xhttp.open("GET", "tasks.xml", true);
+  xhttp.send();
+}
+
+function rozpadni(xmlText) {
+  var x, i, xmlDoc, txt;
+  debugger;
+  parser = new DOMParser;
+  xmlDoc = parser.parseFromString(xmlText,"text/xml");
+  txt = "";
+    x = xmlDoc.getElementsByTagName("task");
+
+  for (i = 0; i< x.length; i++) {
+    txt += x[i].getElementsByTagName("task_no")[0].innerHTML + "<br>";
+    txt += x[i].getElementsByTagName("task_category")[0].innerHTML + "<br>";
+    txt += x[i].getElementsByTagName("task_level")[0].innerHTML + "<br>";
+    txt += x[i].getElementsByTagName("task_header")[0].innerHTML + "<br>";
+
+    helps = x[i].getElementsByTagName("task_hints")[0].getElementsByTagName("hint");
+    var j;
+    for (j = 0; j< helps.length; j++) {
+        txt += "<b>help:</b>" + helps[j].innerHTML + "<br>";
+    }
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+
+</script>
+
+</body>
+</html>
