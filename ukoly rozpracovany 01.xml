@@ -1,0 +1,48 @@
+<xml version="1.0" encoding="UTF-8">
+    <ukoly>
+        <ukol id="1" nadpis="Malíři" uroven="1" body="10" reseni_A="14" reseni_B="">
+            <ukol_hlavicka>
+                <ukol_hlavicka_nadpis>Malíři</ukol_hlavicka_nadpis>
+                <ukol_hlavicka_uroven>1</ukol_hlavicka_uroven>
+                <ukol_id>1</ukol_id>
+                <ukol_body>10</ukol_body>
+                <ukol_reseni_A>14<ukol_reseni_A>
+                <ukol_reseni_B><ukol_reseni_B>
+            </ukol_hlavicka>
+
+            <ukol_telo>
+                <ukol_zadani>Zadání: Devět malířů vymaluje halu za 16 hodin. Jak dlouho to bude trvat 12 malířům?</ukol_zadani>
+                <ukol_napoveda body_dolu="-3">
+                    <ukol_napoveda_obsah>
+                        <ul>
+                            <li>Přímá nebo nepřímá úměrnost?</li>
+                            <li>Čím víc malířů bude na úkolu pracovat, tím dřív bude hotov.</li> 
+                            <li>Jedna veličina se zvětšuje, druhá se zmenšuje => nepřímá úměrnost.</li>
+                        </ul>
+                    </ukol_napoveda_obsah>
+                </ukol_napoveda>
+                <ukol_napoveda body_dolu="-3">
+                    <ukol_napoveda_obsah>
+                        <ul>
+                            9 malířů..............16 dní<br>
+                            12 malířů..............x dní<br>
+                            ----------------------------<br>
+                            Protože se jedná o nepřímou úměrnost, šipky pro se stavení zlomků jdou v opačném směru.<br>
+                            x : 16 = 9 : 12
+                        </ul>
+                    </ukol_napoveda_obsah>
+                </ukol_napoveda>
+                <ukol_odpoved>
+                    Odpověď: 12 malířů vymaluje tuto halu za %1 hodin.
+                    <ukol_reseni>
+                            Řešení:<br>
+                            x : 16 = 9 : 12<br>
+                            x = 16 . 9 : 12<br>
+                            x = 12
+                    </ukol_reseni>
+                </ukol_odpoved>    
+            </<ukol_telo>>
+        </ukol>
+
+    </ukoly>
+</xml>
