@@ -10,13 +10,14 @@
 
 <script>
 function loadXMLDoc() {
+  debugger;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       rozpadni(this.responseText);
     }
   };
-  xhttp.open("GET", "tasks.xml", true);
+  xhttp.open("GET", "ukoly2.xml", true);
   xhttp.send();
 }
 
@@ -26,25 +27,26 @@ function rozpadni(xmlText) {
   parser = new DOMParser;
   xmlDoc = parser.parseFromString(xmlText,"text/xml");
   txt = "";
-    x = xmlDoc.getElementsByTagName("task");
+    x = xmlDoc.getElementsByTagName("ukol");
 
   for (i = 0; i< x.length; i++) {
-    txt += x[i].getElementsByTagName("task_no")[0].innerHTML + "<br>";
-    txt += x[i].getElementsByTagName("task_category")[0].innerHTML + "<br>";
-    txt += x[i].getElementsByTagName("task_level")[0].innerHTML + "<br>";
-    txt += x[i].getElementsByTagName("task_header")[0].innerHTML + "<br>";
+    txt += x[i].getAttribute("id") + "<br>";
+    txt += x[i].getAttribute("nadpis") + "<br>";
+    txt += x[i].getAttribute("uroven") + "<br>";
+    txt += x[i].getAttribute("body") + "<br>";
 
-    // process help
-    helps = x[i].getElementsByTagName("task_hints")[0].getElementsByTagName("hint");
-    var j;
-    for (j = 0; j< helps.length; j++) {
-        if (helps[j].getAttribute("type") == "image") {
-            txt += "<b>help:</b>" + "<img src=''"+ helps[j].innerHTML + "'' alt='obrazek'>"  + "<br>";
-        } else {
-            txt += "<b>help:</b>" + helps[j].getAttribute("type")+ helps[j].innerHTML + "<br>";
-        }
+    // process all help
+    nap_radky = x[i].getElementsByTagName("ukol_napoveda");
+    
+    // .getElementsByTagName("ukol_napoveda_obsah");
+    var h;
+    for (h = 0; h< nap_radky.length; h++) {
         
+        // body_dolu
+        txt +=  "body dolů" + nap_radky[h].getAttribute("body_dolu"); 
+        txt += " <b>help:</b>" + nap_radky[h].getElementsByTagName("ukol_napoveda_obsah")[0].innerHTML + "<br>";       
     }
+
   }
   document.getElementById("demo").innerHTML = txt;
 }

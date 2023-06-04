@@ -62,9 +62,9 @@
                 </div>
             </section>
             <section class="task_answer" task_id="1"  task_points="10" task_answer1="17">
-                task_answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est <input type=text id="task_answer" title="Zadejte výsledek"/> hoc facere longius.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.
-                <button class="task_check_btn" onclick="this.nextElementSibling.style='display:block';
-                                                        initResult(this.parentNode.getAttribute('task_id'),this.parentNode.getAttribute('task_points'));">Zkontroluj</button>
+                task_answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est <input type=text id="task_answer1" title="Zadejte výsledek"/> hoc facere longius.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.
+                <button class="task_check_btn" onclick="debugger; this.nextElementSibling.style='display:block';
+                                                        alert(this.parentNode.getAttribute('task_answer1') + ' vs. ' + document.getElementById('task_answer1').value);">Zkontroluj</button>
                 <div class="task_solution" style="display: none;">
                     task_solution
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius.
